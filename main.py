@@ -1,31 +1,33 @@
-def is_palindrome(input_number):
 
-  input_number_text = str(input_number)
+def is_palindrome_2(input_number):
 
-  reversed_text = input_number_text[::-1]
+  if input_number == 0:
+    return True
 
-  return input_number_text == reversed_text
+  elif input_number < 0 or input_number %10 == 0:
 
-def test_is_palindrome():
+    return False
+
+  reverted_number= 0
+
+  while input_number > reverted_number:
+
+    reverted_number = reverted_number * 10 + input_number%10
+
+    input_number = input_number//10
+
+  return input_number == reverted_number or input_number == reverted_number//10
+
+def test_is_palindrome2():
 
   input_number1 = 45
-  input_number2= 242
+  input_number2= 2442
+  input_number3 = 242
 
-  output1 = is_palindrome(input_number1)
-  output2 = is_palindrome(input_number2)
+  output1 = is_palindrome_2(input_number1)
+  output2 = is_palindrome_2(input_number2)
+  output3 = is_palindrome_2(input_number3)
 
-  return output1, output2
+  return output1, output2, output3
 
-print(test_is_palindrome())
-
-# For leetcode
-
-class Solution(object):
-
-    def isPalindrome(self, x):
-
-      x_text = str(x)
-
-      reversed_text = x_text[::-1]
-
-      return x_text == reversed_text
+print(test_is_palindrome2())
