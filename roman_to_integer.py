@@ -27,3 +27,17 @@ def roman_to_integer(input_roman):
       i= i+1
 
   return output
+
+def test_roman_to_integer():
+
+  input_number1 = "III"
+  input_number2= "LVIII"
+  input_number3 = "MCMXCIV"
+
+  output1 = roman_to_integer(input_number1)
+  output2 = roman_to_integer(input_number2)
+  output3 = roman_to_integer(input_number3)
+
+  return output1, output2, output3
+
+print(test_roman_to_integer())
