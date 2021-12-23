@@ -26,3 +26,13 @@ def longest_prefix(input_string_array):
       output = output + string_to_check
 
   return output
+
+def test_longest_prefix():
+
+  input_string_array = ["dog","racecar","car"]
+
+  output_val = longest_prefix(input_string_array)
+
+  return output_val
+
+print(test_longest_prefix())
