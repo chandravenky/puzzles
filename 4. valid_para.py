@@ -34,3 +34,27 @@ def valid_parant(input_string):
   
   #if everything is closed, return True
   return True
+
+def test_valid_parant():
+
+  input_string1 = "()"
+  input_string2 = "()("
+  input_string3 = ""
+  input_string4 = "()[]{}"
+  input_string5 = "{[]}"
+  input_string6 = "([)]"
+  input_string7 = "(("
+  input_string8 = "){"
+
+  output1 = valid_parant(input_string1) == True
+  output2 = valid_parant(input_string2) == False
+  output3 = valid_parant(input_string3) == False
+  output4 = valid_parant(input_string4) == True
+  output5 = valid_parant(input_string5) == True
+  output6 = valid_parant(input_string6) == False
+  output7 = valid_parant(input_string7) == False
+  output8 = valid_parant(input_string8) == False
+
+  return output1, output2, output3, output4, output5, output6, output7, output8
+
+print(test_valid_parant())
