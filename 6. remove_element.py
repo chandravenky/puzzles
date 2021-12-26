@@ -25,3 +25,19 @@ def remove_element_test():
   actual_output_k2, _ = remove_element(input_nums2, input_k2)
 
   return actual_output_k1 == expected_output_k1, actual_output_k2 == expected_output_k2
+
+print(remove_element_test())
+
+#For leetcode
+class Solution(object):
+    def removeElement(self, nums, val):
+        holding_pointer = 0
+
+        for i in range(0, len(nums)):
+
+            if nums[i] != val:
+                nums[holding_pointer] = nums[i]
+                holding_pointer = holding_pointer +1
+
+        return holding_pointer
+
