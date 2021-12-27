@@ -63,3 +63,16 @@ print(search_and_insert2([1,3,5,6], 5))
 print(search_and_insert2([1,3,5,6], 2))
 print(search_and_insert2([1,3,5,6], 7))
 print(search_and_insert2([1,3,5,6], 0))
+# #For leetcode
+#Solution 1
+class Solution(object):
+    def removeElement(self, nums, val):
+        holding_pointer = 0
+
+        for i in range(0, len(nums)):
+
+            if nums[i] != val:
+                nums[holding_pointer] = nums[i]
+                holding_pointer = holding_pointer +1
+
+        return holding_pointer
