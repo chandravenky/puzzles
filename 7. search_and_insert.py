@@ -36,3 +36,30 @@ def search_and_insert2(nums, target):
 
       if (half_index == end_index or half_index == start_index)  and target<nums[half_index]:
           return half_index
+
+#Tests
+def search_and_insert2_test():
+
+  input_nums = [1,3,5,6]
+
+  input_target1 = 5
+  input_target2 = 2
+  input_target3 = 7
+  input_target4 = 0
+
+
+  actual_output_k1 = search_and_insert2(input_nums, input_target1)
+  actual_output_k2 = search_and_insert2(input_nums, input_target2)
+  actual_output_k3 = search_and_insert2(input_nums, input_target3)
+  actual_output_k4 = search_and_insert2(input_nums, input_target4)
+
+  return actual_output_k1==2, actual_output_k2 ==1, actual_output_k3==4, actual_output_k4 == 0
+
+print(search_and_insert2_test())
+
+
+
+print(search_and_insert2([1,3,5,6], 5))
+print(search_and_insert2([1,3,5,6], 2))
+print(search_and_insert2([1,3,5,6], 7))
+print(search_and_insert2([1,3,5,6], 0))
