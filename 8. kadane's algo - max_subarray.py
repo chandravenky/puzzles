@@ -19,3 +19,16 @@ def max_sub_array(nums):
         highest_sum = current_sum
     
   return highest_sum
+
+# Tests
+def max_sub_array_test():
+
+  input_nums1 = [-2,1,-3,4,-1,2,1,-5,4]
+  input_nums2 = [1]
+
+  actual_output_k1 = max_sub_array(input_nums1)
+  actual_output_k2 = max_sub_array(input_nums2)
+
+  return actual_output_k1==6, actual_output_k2 ==1
+
+print(max_sub_array_test())
