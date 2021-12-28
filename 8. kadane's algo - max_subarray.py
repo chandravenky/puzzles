@@ -34,3 +34,25 @@ def max_sub_array_test():
   return actual_output_k1==6, actual_output_k2 ==1, actual_output_k3==23
 
 print(max_sub_array_test())
+
+#For leetcode
+class Solution(object):
+    def maxSubArray(self, nums):
+        highest_sum = nums[0]
+        current_sum = nums[0]
+
+        for i in range(1, len(nums)):
+
+            if current_sum + nums[i] > nums[i]:
+                current_sum = current_sum + nums[i]
+
+                if current_sum > highest_sum:
+                    highest_sum = current_sum
+
+            else:
+                current_sum = nums[i]
+
+                if current_sum > highest_sum:
+                    highest_sum = current_sum
+
+        return highest_sum
