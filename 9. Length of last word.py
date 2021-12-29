@@ -19,3 +19,10 @@ def length_last_word_test():
   return actual_output_k1==5, actual_output_k2 ==4, actual_output_k3==6
 
 print(length_last_word_test())
+
+#For leetcode
+class Solution(object):
+  def lengthOfLastWord(self, input_string):
+      words = input_string.split()
+  
+      return len(words[-1])
