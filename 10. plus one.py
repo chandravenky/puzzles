@@ -37,3 +37,26 @@ def plus_one_test():
   return actual_output_k1==[1,2,4], actual_output_k2 ==[4,3,2,2], actual_output_k3==[1,0]
 
 print(plus_one_test())
+
+# For leetcode
+#Solution1
+class Solution(object):
+  def lengthOfLastWord(self, input_string):
+    integer_form = ''.join([str(item) for item in input_array])
+
+    incremented_num = int(integer_form) + 1
+
+    return list(str(incremented_num))
+
+#Solution2
+class Solution(object):
+    def plusOne(self, input_array):
+        num = 0
+
+        for i in range(0, len(input_array)):
+
+            num = num + input_array[i]*(10**(len(input_array) - i-1))
+
+        num = num +1
+
+        return list(str(num))
