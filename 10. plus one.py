@@ -21,3 +21,19 @@ def plus_one_2(input_array):
   num = num +1
 
   return list(str(num))
+
+
+# Tests
+def plus_one_test():
+
+  input_array1 = [1,2,3]
+  input_array2 = [4,3,2,1]
+  input_array3 = [9]
+
+  actual_output_k1 = plus_one(input_array1)
+  actual_output_k2 = plus_one(input_array2)
+  actual_output_k3 = plus_one(input_array3)
+
+  return actual_output_k1==[1,2,4], actual_output_k2 ==[4,3,2,2], actual_output_k3==[1,0]
+
+print(plus_one_test())
