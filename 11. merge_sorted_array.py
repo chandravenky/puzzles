@@ -62,3 +62,41 @@ def merge_sorted_array_test():
   return actual_output1 == expected_output1, actual_output2 == expected_output2, actual_output3 == expected_output3, actual_output4 == expected_output4, actual_output5 == expected_output5, actual_output6 == expected_output6, actual_output7 == expected_output7 
 
 print(merge_sorted_array_test())
+
+#For leetcode
+class Solution(object):
+    def merge(self, nums1, m, nums2, n):
+
+        holding_pointer1 = m-1
+        holding_pointer2 = n-1
+
+        if m == 0:
+            nums1[:] = nums2[:n]
+        
+        elif n ==0:
+            pass
+            
+        else:
+
+            for i in range(len(nums1)-1, 0, -1):
+
+                if nums1[holding_pointer1] <= nums2[holding_pointer2]:
+
+                    nums1[i] = nums2[holding_pointer2]
+
+                    holding_pointer2 = holding_pointer2 -1
+                    
+                    if holding_pointer2<0:
+                        break
+
+
+                else:
+                    nums1[i] = nums1[holding_pointer1]
+
+                    holding_pointer1 = holding_pointer1 - 1
+                    
+                    if holding_pointer1<0:
+
+                        nums1[:holding_pointer2+1]= nums2[:holding_pointer2+1]
+                        
+                        break
