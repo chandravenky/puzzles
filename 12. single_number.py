@@ -29,3 +29,23 @@ def single_number_2(input_array):
     #print("result", res, bin(res))
 
   return res
+
+#Tests
+def single_number_test():
+
+  input_array1 = [2,2,1]
+  input_array2 = [4,1,2,1,2]
+  input_array3 = [1]
+
+  return single_number(input_array1) == 1, single_number(input_array2) == 4, single_number(input_array3) == 1
+
+def single_number_2_test():
+
+  input_array1 = [2,2,1]
+  input_array2 = [4,1,2,1,2]
+  input_array3 = [1]
+
+  return single_number_2(input_array1) == 1, single_number_2(input_array2) == 4, single_number_2(input_array3) == 1
+
+print(single_number_test())
+print(single_number_2_test())
