@@ -45,3 +45,24 @@ def excel_sheet_column_num_2(input_col_num):
       result = map_dict[remainder-1] + result
 
   return result
+
+#Tests
+def excel_sheet_column_num_test():
+
+  input_number1= 1
+  input_number2= 28
+  input_number3= 701
+  input_number4= 2147483647
+
+  expected_output1 = "A"
+  expected_output2 = "AB"
+  expected_output3 = "ZY"
+  expected_output4 = "FXSHRXW"
+
+  result_tuple1 = (excel_sheet_column_num(input_number1) == expected_output1, excel_sheet_column_num(input_number2) == expected_output2, excel_sheet_column_num(input_number3) == expected_output3, excel_sheet_column_num(input_number4) == expected_output4)
+
+  result_tuple2 = (excel_sheet_column_num_2(input_number1) == expected_output1, excel_sheet_column_num_2(input_number2) == expected_output2, excel_sheet_column_num_2(input_number3) == expected_output3, excel_sheet_column_num_2(input_number4) == expected_output4)
+  
+  return result_tuple1, result_tuple2
+
+print(excel_sheet_column_num_test())
