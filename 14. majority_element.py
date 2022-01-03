@@ -16,3 +16,26 @@ def majority_element(nums):
 
     else:
       cnt_dict[num] = 1
+
+#Better solution with O(1) solution
+
+#Boyer-Moore algorithm
+def majority_element_2(nums):
+
+  count = 0
+  res = nums[0]
+
+  for num in nums[1:]:
+
+    if num != res:
+      
+      count = count-1
+      
+      if count <0:
+        count = 0
+        res = num
+    
+    else:
+      count = count + 1
+
+  return res
