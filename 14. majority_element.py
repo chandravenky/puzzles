@@ -39,3 +39,23 @@ def majority_element_2(nums):
       count = count + 1
 
   return res
+
+#Tests
+def majority_element_test():
+
+  input_array1= [1]
+  input_array2 = [3,2,3]
+  input_array3= [2,2,1,1,1,2,2]
+
+  expected_output1= 1
+  expected_output2= 3
+  expected_output3= 2
+
+  result_tuple1 = ( majority_element(input_array1) == expected_output1, majority_element(input_array2) == expected_output2, majority_element(input_array3) == expected_output3 )
+
+  result_tuple2 = ( majority_element_2(input_array1) == expected_output1, majority_element_2(input_array2) == expected_output2, majority_element_2(input_array3) == expected_output3 )
+
+  return result_tuple1, result_tuple2
+
+
+print(majority_element_test())
