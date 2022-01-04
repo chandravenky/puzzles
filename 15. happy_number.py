@@ -29,3 +29,22 @@ def happy_number(input_num):
 
     else:
       cycle_list.append(input_num)
+
+#Tests
+def happy_number_test():
+
+  input_number1= 19
+  input_number2= 2
+  input_number3= 12
+  input_number4= 7
+  input_number5= 1
+
+  expected_output1= True
+  expected_output2= False
+  expected_output3= False
+  expected_output4= True
+  expected_output5= True
+
+  return ( happy_number(input_number1) == expected_output1, happy_number(input_number2) == expected_output2, happy_number(input_number3) == expected_output3, happy_number(input_number4) == expected_output4, happy_number(input_number5) == expected_output5 )
+
+print(happy_number_test())
