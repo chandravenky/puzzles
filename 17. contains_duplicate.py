@@ -1,15 +1,20 @@
 
-def contains_duplicate(input_array):
+def contains_duplicate(input_array, k):
 
   map_dict = {}
 
-  for i in range(0, len(input_array)):
+  for index, value in enumerate(input_array):
 
-    if input_array[i] in map_dict:
-      return True
+    if value in map_dict:
+      
+      if index - map_dict[value] <=k:
+
+        return True
+      
+      map_dict[value] = index
     
     else:
-      map_dict[input_array[i]] = 1
+      map_dict[value] = index
 
   return False
 
@@ -17,30 +22,9 @@ def contains_duplicate(input_array):
 def contains_duplicate_test():
 
   input_array1 = [1,2,3,1]
-  input_array2 = [1,2,3,4]
-  input_array3 = [1,1,1,3,3,4,3,2,4,2]
-  input_array4 = [1]
-  input_array5 = []
+  input_array2 = [1,0,1,1]
+  input_array3 = [1,2,3,1,2,3]
 
-  return ( contains_duplicate(input_array1) == True, contains_duplicate(input_array2) == False, contains_duplicate(input_array3) == True, contains_duplicate(input_array4) == False, contains_duplicate(input_array5) == False )
+  return ( contains_duplicate(input_array1, 3) == True, contains_duplicate(input_array2, 1) == True, contains_duplicate(input_array3, 2) == False )
 
 print(contains_duplicate_test())
-
-#Leetcode
-class Solution(object):
-  def containsDuplicate(self, input_array):
-    """
-    :type nums: List[int]
-    :rtype: bool
-    """
-    map_dict = {}
-
-    for i in range(0, len(input_array)):
-
-      if input_array[i] in map_dict:
-        return True
-
-      else:
-        map_dict[input_array[i]] = 1
-
-    return False
