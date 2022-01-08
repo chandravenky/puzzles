@@ -27,3 +27,14 @@ def is_anagram(s, t):
     return False
 
   return True
+
+# Tests
+def is_anagram_test():
+
+  input_case1 = ('anagram', 'nagaram')
+  input_case2 = ('rat', 'car')
+  input_case3 = ('ab', 'a')
+
+  return ( is_anagram(input_case1[0], input_case1[1]) == True, is_anagram(input_case2[0], input_case2[1]) == False, is_anagram(input_case3[0], input_case3[1]) == False)
+
+print(is_anagram_test())
