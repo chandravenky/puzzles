@@ -42,3 +42,31 @@ def ugly_number_test():
   return ugly_number(input_number1) == expected_output1, ugly_number(input_number2) == expected_output2, ugly_number(input_number3) == expected_output3, ugly_number(input_number4) == expected_output4, ugly_number(input_number5) == expected_output5
 
 print(ugly_number_test())
+#Leetcode
+class Solution(object):
+  def isUgly(self, input_number):
+    """
+    :type n: int
+    :rtype: bool
+    """
+    
+    if input_number ==0:
+      return False
+
+    while input_number!=1:
+
+      for i in [2,3,5]:
+
+        if input_number%i ==0:
+
+          input_number = input_number/i
+
+          break
+
+                
+        else:
+
+          return False
+
+    return True
+
