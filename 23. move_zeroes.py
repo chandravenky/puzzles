@@ -41,3 +41,31 @@ def move_zeroes_test():
   return move_zeroes(input_array1) == expected_output1, move_zeroes(input_array2) == expected_output2, move_zeroes(input_array3) == expected_output3, move_zeroes(input_array4) == expected_output4, move_zeroes(input_array5) == expected_output5
 
 print(move_zeroes_test())
+
+#Leetcode
+class Solution(object):
+  def moveZeroes(self, input_array):
+    """
+    :type nums: List[int]
+    :rtype: None Do not return anything, modify nums in-place instead.
+    """
+    current_pointer = 0
+
+    for i in range(0, len(input_array)):
+
+
+      if input_array[i] == 0 and current_pointer==i:
+        current_pointer = i
+
+      elif input_array[i] != 0:
+
+        swap_value = input_array[current_pointer]
+        input_array[current_pointer] = input_array[i]
+        input_array[i] = swap_value
+        current_pointer= current_pointer + 1
+
+      else:
+        pass
+
+    return input_array
+
