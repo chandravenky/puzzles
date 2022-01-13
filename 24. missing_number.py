@@ -40,3 +40,20 @@ def missing_number_test():
   return result_tuple1, result_tuple2
 
 print(missing_number_test())
+
+#Leetcode
+class Solution(object):
+  def missingNumber(self, input_array):
+    """
+    :type nums: List[int]
+    :rtype: int
+    """
+
+    tot_sum = (len(input_array)*(len(input_array) + 1))/2
+    
+    for i in input_array:
+        
+      tot_sum = tot_sum -i
+        
+    return tot_sum
+
