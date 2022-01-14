@@ -22,3 +22,21 @@ def reverse_vowels(input_string):
     input_string[index_string[i]] = vowel_string[i]
 
   return ''.join(input_string)
+
+#Tests
+def reverse_vowels_test():
+
+  input_string1 = "hello"
+  input_string2 = "leetcode"
+  input_string3 = "aA"
+  input_string4 = "A man, a plan, a canal: Panama"
+
+  
+  expected_output1 = "holle"
+  expected_output2 = "leotcede"
+  expected_output3 = "Aa"
+  expected_output4 = "a man, a plan, a canal: PanamA"
+
+  return ( expected_output1 == reverse_vowels(input_string1), expected_output2 == reverse_vowels(input_string2), expected_output3 == reverse_vowels(input_string3), expected_output4 == reverse_vowels(input_string4) )
+
+print(reverse_vowels_test())
