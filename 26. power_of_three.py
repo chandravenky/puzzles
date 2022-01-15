@@ -42,25 +42,4 @@ def power_of_three_test():
 
 print(power_of_three_test())
 
-#Leetcode
-class Solution(object):
-  def isPowerOfThree(self, input_number):
-    """
-    :type n: int
-    :rtype: bool
-    """
-    if input_number<0:
-      return False
 
-    if input_number ==0 or input_number ==2:
-      return False
-
-    while input_number>3:
-      #leetcode evaluates in Python 2.7
-      input_number = float(input_number)/float(3)
-      remainder = input_number % 3
-
-      if remainder>0:
-        return False
-
-    return True
