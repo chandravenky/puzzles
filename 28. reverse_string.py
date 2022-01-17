@@ -12,3 +12,17 @@ def reverse_string(input_string_array):
     input_string_array[len(input_string_array) -1 - i] = holding_pointer
 
   return input_string_array
+
+
+#Tests
+def reverse_string_test():
+
+  input_string_array1 = ["h","e","l","l","o"]
+  input_string_array2 = ["H","a","n","n","a","h"]
+  
+  expected_output1 = ["o","l","l","e","h"]
+  expected_output2 = ["h","a","n","n","a","H"]
+
+  return ( expected_output1 == reverse_string(input_string_array1), expected_output2 == reverse_string(input_string_array2) )
+
+print(reverse_string_test())
