@@ -26,3 +26,16 @@ def intersection(nums1, nums2):
 
 
   return result_list
+
+#Tests
+def intersection_test():
+
+  nums11, nums12 = [1,2,2,1], [2,2]
+  nums21, nums22 = [4,9,5], [9,4,9,8,4]
+  
+  expected_output1 = [2,2]
+  expected_output2 = [9,4]
+
+  return ( expected_output1 == intersection(nums11, nums12), expected_output2 == intersection(nums21, nums22) )
+
+print(intersection_test())
