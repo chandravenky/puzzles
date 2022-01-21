@@ -79,45 +79,6 @@ def longest_palindrome_test():
 
 print(longest_palindrome_test())
 
-#Leetcode
-#Without dp
-class Solution(object):
-    def longestPalindrome(self, input_string):
-        """
-        :type s: str
-        :rtype: str
-        """
-
-        result= ''
-        longest_length = 0
-
-        for i in range(0, len(input_string)):
-
-        #Odd palindromes
-            left, right = i, i
-
-            while left>=0 and right<len(input_string) and input_string[left]== input_string[right]:
-
-                if right-left +1>longest_length:
-                    result = input_string[left: right+1]
-                    longest_length = right-left +1
-
-                left = left -1
-                right = right+1
-
-            #Even checks
-            left, right = i,i + 1
-            while left>=0 and right<len(input_string) and input_string[left] == input_string[right]:
-                if right-left +1>longest_length:
-                    result = input_string[left: right+1]
-                    longest_length = right-left +1
-
-                left = left -1
-                right = right+1
-
-
-        return result
-
 #with dp
 class Solution(object):
     def longestPalindrome(self, s):
