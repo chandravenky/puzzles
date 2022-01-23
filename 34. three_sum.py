@@ -45,3 +45,24 @@ def three_sum(nums):
           first_pointer = first_pointer +1
     
   return result_list
+
+#Tests
+def three_sum_test():
+
+  input_array1 = ([-1,0,1,2,-1,-4])
+  input_array2 = ([])
+  input_array3 = ([0])
+  input_array4 = ([-1,0,1,2,-1,-4,-2,-3,3,0,4])
+
+  expected_output1 = [[-1, -1, 2], [-1, 0, 1]]
+  expected_output2 = []
+  expected_output3 = []
+  expected_output4 = [[-4,0,4],[-4,1,3],[-3,-1,4],[-3,0,3],[-3,1,2],[-2,-1,3],[-2,0,2],[-1,-1,2],[-1,0,1]]
+
+  return ( expected_output1 == three_sum(input_array1),
+           expected_output2 == three_sum(input_array2),
+           expected_output3 == three_sum(input_array3),
+           expected_output4 == three_sum(input_array4)   
+              )
+
+print(three_sum_test())
