@@ -36,3 +36,27 @@ def max_profit_test():
   return result_tuple
 
 print(max_profit_test())
+
+#Leetcode
+class Solution(object):
+    def maxProfit(self, nums):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+
+        max_profit=0
+        min_buy = nums[0]
+
+        for i in range(1, len(nums)):
+
+            if nums[i] < min_buy:
+                min_buy = nums[i]
+
+            profit = nums[i]-min_buy
+            
+            if profit>max_profit:
+                max_profit = profit
+
+        return max_profit
+        
