@@ -19,3 +19,20 @@ def max_profit(nums):
     cache.append(max(profit, cache[-1]))
 
   return cache[-1]
+
+#Tests
+def max_profit_test():
+
+  input_array1= [7,1,5,3,6,4]
+  input_array2=[7,6,4,3,1]
+  input_array3= [2,1,1,2]
+
+  expected_output1= 5
+  expected_output2= 0
+  expected_output3= 1
+
+  result_tuple = ( expected_output1 == max_profit(input_array1), expected_output2 == max_profit(input_array2), expected_output3 == max_profit(input_array3) )
+
+  return result_tuple
+
+print(max_profit_test())
