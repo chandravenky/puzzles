@@ -29,3 +29,22 @@ def climb_stairs_test():
   return result_tuple
 
 print(climb_stairs_test())
+
+#Leetcode
+class Solution(object):
+    def climbStairs(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        ways=[0, 1,2,3]
+
+        if n<=3:
+            return n
+
+        for i in range(3, n):
+
+            ways.append(ways[-1] + ways[-2])
+
+        print(i, ways)
+        return ways[-1]
