@@ -40,3 +40,12 @@ def two_out_of_three(nums1, nums2, nums3):
       
   return list(final_list.keys())
 
+
+#Tests
+def two_out_of_three_test():
+
+  return ( two_out_of_three([1,1,3,2],[2,3], [3]) == [3,2], 
+  two_out_of_three([3,1], [2,3], [1,2]) == [3,1, 2], 
+  two_out_of_three([1,2,2], [4,3,3], [5]) == [],)
+
+print(two_out_of_three_test())
