@@ -48,3 +48,20 @@ def buddy_strings(s, goal):
       return True
 
     return False
+
+#9:55
+#10:14
+
+def buddy_strings_test():
+
+  expected_output1 = True
+  expected_output2 = False
+  expected_output3 = True
+  expected_output4 = True
+  expected_output5 = False
+
+  result_tuple = ( expected_output1 == buddy_strings("ab", "ba"), expected_output2 == buddy_strings("ab", "ab"), expected_output3 == buddy_strings("aa", "aa"), expected_output4 == buddy_strings("banana", "banana"), expected_output5 == buddy_strings("abac", "abad") )
+
+  return result_tuple
+
+print(buddy_strings_test())
