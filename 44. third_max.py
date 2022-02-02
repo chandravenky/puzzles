@@ -62,3 +62,36 @@ def third_max_test():
   return ( expected_output1 == actual_output1, expected_output2 == actual_output2, expected_output3 == actual_output3, expected_output4 == actual_output4, expected_output5 == actual_output5, expected_output6 == actual_output6, expected_output7 == actual_output7 )
 
 print(third_max_test())
+
+#Leetcode
+class Solution(object):
+    def thirdMax(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        first_max = -2147483649
+        second_max = -2147483649
+        third_max = -2147483649
+
+        for i in range(0, len(nums)):
+
+            if nums[i] > max(first_max, second_max, third_max):
+                third_max = second_max
+                second_max = first_max
+                first_max = nums[i]
+
+            elif nums[i]> max(third_max, second_max) and nums[i]<first_max:
+                third_max = second_max
+                second_max = nums[i]
+
+            elif nums[i]> third_max and nums[i]< min(second_max, first_max):
+                third_max = nums[i]
+
+            else:
+                pass
+
+        if second_max==-2147483649 or third_max==-2147483649:
+            third_max = first_max
+
+        return third_max
