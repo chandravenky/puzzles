@@ -25,3 +25,38 @@ def contains_pattern(arr, m, k):
     return True
   
   return False
+
+#Tests
+
+def contains_pattern_test():
+
+  input_array1 = [1,2,4,4,4,4]
+  input_array2 = [1,2,1,2,1,1,1,3]
+  input_array3 = [1,2,1,2,1,3]
+  input_array4 = [6,3,5,5,5,5,1,5,6,2,5,1,2,5,3,5,1,3,5,5,6,4,1,2]
+  input_array5 = [3,2,2,1,2,2,1,1,1,2,3,2,2]
+
+  input_m1 = 1
+  input_m2 = 2
+  input_m3 = 2
+  input_m4 = 1
+  input_m5 = 3
+
+  input_k1 = 3
+  input_k2 = 2
+  input_k3 = 3
+  input_k4 = 5
+  input_k5 = 2
+
+  expected_result = ( contains_pattern(input_array1, input_m1, input_k1),
+  contains_pattern(input_array2, input_m2, input_k2),
+  contains_pattern(input_array3, input_m3, input_k3),
+  contains_pattern(input_array4, input_m4, input_k4),
+  contains_pattern(input_array5, input_m5, input_k5) )
+
+  actual_result = ( True, True, False, False, True )
+
+
+  return expected_result == actual_result
+
+print(contains_pattern_test())
