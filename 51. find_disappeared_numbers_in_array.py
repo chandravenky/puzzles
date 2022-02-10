@@ -23,3 +23,18 @@ def find_disappeared_numbers(nums):
 
 
     return result2
+
+#Tests
+def find_disappeared_numbers_test():
+
+  input_array1 = [4,3,2,7,8,2,3,1]
+  input_array2 = [1,1]
+
+  expected_output1 = [5,6]
+  expected_output2 = [2]
+
+
+  return ( expected_output1 == find_disappeared_numbers(input_array1), expected_output2 == find_disappeared_numbers(input_array2) )
+
+
+print(find_disappeared_numbers_test())
