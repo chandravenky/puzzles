@@ -32,3 +32,32 @@ def isomorphic_test():
   expected_result3 = True
 
   return isomorphic(input_string1a, input_string1b) == expected_result1, isomorphic(input_string2a, input_string2b) == expected_result2, isomorphic(input_string3a, input_string3b) == expected_result3
+
+class Solution(object):
+    def isIsomorphic(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        
+        #8:36 AM
+        if len(s)!=len(t):
+            return False
+        
+        store = {}
+        for i in range(0, len(t)):
+            if s[i] not in store:
+                store[s[i]] = t[i]
+                
+            else:
+                if store[s[i]] == t[i]:
+                    pass
+                else:
+                    return False
+                
+        if len(store.values()) != len(set(store.values())):
+            return False
+                
+        return True
+        
