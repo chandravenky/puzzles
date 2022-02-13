@@ -19,3 +19,16 @@ def isomorphic(s, t):
     return False
           
   return True
+
+#Tests
+def isomorphic_test():
+
+  input_string1a, input_string1b  = "egg", "add"
+  input_string2a, input_string2b = "foo", "bar"
+  input_string3a, input_string3b = "paper", "title"
+
+  expected_result1 = True
+  expected_result2 = False
+  expected_result3 = True
+
+  return isomorphic(input_string1a, input_string1b) == expected_result1, isomorphic(input_string2a, input_string2b) == expected_result2, isomorphic(input_string3a, input_string3b) == expected_result3
