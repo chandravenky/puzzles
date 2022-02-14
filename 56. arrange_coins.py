@@ -40,3 +40,33 @@ def arrange_coins_test():
   return arrange_coins(input_num1) == expected_result1, arrange_coins(input_num2) == expected_result2, arrange_coins(input_num3) == expected_result3, arrange_coins(input_num4) == expected_result4, arrange_coins(input_num5) == expected_result5
 
 print(arrange_coins_test())
+
+class Solution(object):
+    def arrangeCoins(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        
+        start = 0
+        end = n
+        
+        
+        while start<=end:
+            
+            mid = (start+end)//2
+            
+            tot_sum = mid*(mid+1)//2
+            
+            if tot_sum > n:
+                
+                end = mid - 1
+                
+            elif tot_sum <n:
+                start = mid + 1
+                
+            else:
+                return mid
+            
+        return end
+        
