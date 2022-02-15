@@ -28,3 +28,18 @@ def find_difference(s, t):
           del master_store[store_2[i]]
               
   return master_store.keys()[0]
+
+#Tests
+def find_difference_test():
+
+  input_s1, input_t1 = "abcd", "abcde"
+  input_s2, input_t2 = "", "y"
+  input_s3, input_t3 = "a", "aa"
+
+  expected_output_1 = "e"
+  expected_output_2 = "y"
+  expected_output_3 = "a"
+
+  return expected_output_1 == find_difference(input_s1, input_t1), expected_output_2 == find_difference(input_s2, input_t2), expected_output_3 == find_difference(input_s3, input_t3)
+
+print(find_difference_test())
