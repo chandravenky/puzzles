@@ -30,3 +30,24 @@ def license_key_formatting_test():
   return ( expected_output1 == license_key_formatting(input_license_key1, input_k1), expected_output2 == license_key_formatting(input_license_key2, input_k2) )
 
 print(license_key_formatting_test())
+
+#Submit
+class Solution(object):
+    def licenseKeyFormatting(self, s, k):
+        """
+        :type s: str
+        :type k: int
+        :rtype: str
+        """
+        s = s.upper()
+        s = list(s.replace("-", ""))
+        s_reversed = s[::-1]
+
+        output = ""
+        for i in range(0, len(s_reversed), k):
+
+            output = output + ''.join(s_reversed[i:i+k]) + '-'
+
+
+        result = output[::-1]
+        return result[1:]
