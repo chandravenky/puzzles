@@ -23,3 +23,19 @@ def longest_palindrome(s):
   extra_char = 1 if len(store) > len(pair_characters_store) or len(extra_char_in_pair)>0 else 0
   
   return tot_character*2 + extra_char
+        
+  
+#Add tests
+def longest_palindrome_test():
+
+  input_s1 = "abccccdd" 
+  input_s2 = "a"
+  input_s3 = "bb"
+
+  expected_output1 = 7
+  expected_output2 = 1
+  expected_output3 = 2
+
+  return ( expected_output1 == longest_palindrome(input_s1), expected_output2 == longest_palindrome(input_s2), expected_output3 == longest_palindrome(input_s3) )
+
+print(longest_palindrome_test())
