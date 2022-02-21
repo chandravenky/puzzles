@@ -41,3 +41,30 @@ def find_words_test():
   return ( expected_output1 == find_words(input_words1), expected_output2 == find_words(input_words2), expected_output3 == find_words(input_words3) )
 
 print(find_words_test())
+
+#Submit
+class Solution(object):
+    def validPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        pointer1 = 0
+        pointer2 = len(s) - 1
+        
+        while pointer1 < pointer2:
+            if s[pointer1] != s[pointer2]:
+                
+                string1 = s[pointer1:pointer2]
+                string2 = s[pointer1+1:pointer2+1]
+                
+                if string1 == string1[::-1] or string2 == string2[::-1]:
+                    return True
+                else:
+                    return False
+            
+            pointer1 = pointer1 + 1
+            pointer2 = pointer2 - 1
+            
+        return True
+
