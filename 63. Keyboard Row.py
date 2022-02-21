@@ -26,3 +26,18 @@ def find_words(words):
       result.append(words[i])
   
   return result
+  
+#Tests
+def find_words_test():
+
+  input_words1 = ["Hello","Alaska","Dad","Peace"]
+  input_words2 = ["omk"]
+  input_words3 = ["adsdf","sfd"]
+
+  expected_output1 = ["Alaska","Dad"]
+  expected_output2 = []
+  expected_output3 = ["adsdf","sfd"]
+
+  return ( expected_output1 == find_words(input_words1), expected_output2 == find_words(input_words2), expected_output3 == find_words(input_words3) )
+
+print(find_words_test())
