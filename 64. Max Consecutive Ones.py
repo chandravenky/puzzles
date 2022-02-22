@@ -28,3 +28,21 @@ def max_consecutive_ones(nums):
       max_count = count
 
   return max_count
+
+#Tests
+def max_consecutive_ones_test():
+
+  input_nums1 = [1,1,0,1,1,1]
+  input_nums2 = [1,0,1,1,0,1]
+  input_nums3 = [1]
+  input_nums4 = [0,0]
+  input_nums4 = [1,1,0,1]
+
+  expected_output1 = 3
+  expected_output2 = 2
+  expected_output3 = 1
+  expected_output4 = 2
+
+  return ( expected_output1 == max_consecutive_ones(input_nums1), expected_output2 == max_consecutive_ones(input_nums2), expected_output3 == max_consecutive_ones(input_nums3), expected_output4 == max_consecutive_ones(input_nums4) )
+
+print(max_consecutive_ones_test())
