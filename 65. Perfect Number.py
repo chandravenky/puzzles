@@ -16,3 +16,20 @@ def perfect_number(num):
     return True
 
   return False
+
+#Tests
+def perfect_number_test():
+
+  input_nums1 = 28
+  input_nums2 = 7
+  input_nums3 = 99999991
+  input_nums4 = 1
+
+  expected_output1 = True
+  expected_output2 = False
+  expected_output3 = False
+  expected_output4 = False
+
+  return ( expected_output1 == perfect_number(input_nums1), expected_output2 == perfect_number(input_nums2), expected_output3 == perfect_number(input_nums3), expected_output4 == perfect_number(input_nums4))
+
+print(perfect_number_test())
