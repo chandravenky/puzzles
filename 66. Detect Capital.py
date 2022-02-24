@@ -36,3 +36,20 @@ def detect_capital(word):
         return False
           
   return True
+
+#Tests
+def detect_capital_test():
+
+  input_nums1 = "USA"
+  input_nums2 = "FlaG"
+  input_nums3 = "mL"
+  input_nums4 = "cVe"
+
+  expected_output1 = True
+  expected_output2 = False
+  expected_output3 = False
+  expected_output4 = False
+
+  return ( expected_output1 == detect_capital(input_nums1), expected_output2 == detect_capital(input_nums2), expected_output3 == detect_capital(input_nums3), expected_output4 == detect_capital(input_nums4))
+
+print(detect_capital_test())
