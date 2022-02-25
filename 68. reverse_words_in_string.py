@@ -27,3 +27,22 @@ def reverse_words_test():
   return ( expected_output1 == reverse_words(input_s1), expected_output2 == reverse_words(input_s2), expected_output3 == reverse_words(input_s3) )
 
 print(reverse_words_test())
+  
+#Final solution
+class Solution(object):
+  def reverseWords(self, s):
+    """
+    :type s: str
+    :rtype: str
+    """
+    
+    words_list = s.split()
+    
+    for i in range(0, len(words_list)//2):
+      
+      hold_word = words_list[i]
+      
+      words_list[i] = words_list[len(words_list)-1-i]
+      words_list[len(words_list)-1-i] = hold_word
+        
+    return ' '.join(words_list)
