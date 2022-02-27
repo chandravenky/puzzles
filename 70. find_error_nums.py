@@ -15,3 +15,16 @@ def find_error_nums(nums):
       num_occured_twice = nums[i]
 
   return [num_occured_twice, tot_expected_sum - running_sum]
+
+#Add tests
+def find_error_nums_test():
+
+  input_nums1 = [1,2,2,4]
+  input_nums2 = [1,1]
+
+  expected_output1 = [2,3]
+  expected_output2 = [1,2]
+
+  return ( expected_output1 == find_error_nums(input_nums1), expected_output2 == find_error_nums(input_nums2) )
+
+print(find_error_nums_test())
