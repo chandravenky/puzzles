@@ -42,4 +42,34 @@ def can_place_mismatch_test():
 
   return ( expected_output1 == can_place_mismatch(input_flowerbed1, input_n1), expected_output2 == can_place_mismatch(input_flowerbed2, input_n2), expected_output3 == can_place_mismatch(input_flowerbed3, input_n3), expected_output4 == can_place_mismatch(input_flowerbed4, input_n4) )
 
-print(can_place_mismatch_test())a
+print(can_place_mismatch_test())
+  
+#Final solution
+class Solution(object):
+  def canPlaceFlowers(self, flowerbed, n):
+    """
+    :type flowerbed: List[int]
+    :type n: int
+    :rtype: bool
+    """
+    
+    i = 0
+    
+    while i<len(flowerbed):
+      
+      if flowerbed[i] == 0:
+        
+        if i == len(flowerbed)-1:
+          n=n-1
+          break
+        elif flowerbed[i+1] == 0:
+          n = n-1
+          i= i+2
+        else:
+          i=i+3
+      
+      else:
+        i = i+2
+            
+    return n<=0
+      
