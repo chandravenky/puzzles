@@ -24,3 +24,22 @@ def ransom_note(ransomNote, magazine):
         del magazine_store[ransomNote[i]]
               
   return True
+  
+#Add tests
+def ransom_note_test():
+
+  input_ransom1 = "a" 
+  input_ransom2 = "aa"
+  input_ransom3 = "aa"
+
+  input_magazine1 = "b"
+  input_magazine2 = "ab"
+  input_magazine3 = "aab"
+
+  expected_output1 = False
+  expected_output2 = False
+  expected_output3 = True
+
+  return ( expected_output1 == ransom_note(input_ransom1, input_magazine1), expected_output2 == ransom_note(input_ransom2, input_magazine2), expected_output3 == ransom_note(input_ransom3, input_magazine3) )
+
+print(ransom_note_test())
