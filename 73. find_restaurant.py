@@ -22,3 +22,24 @@ def find_restaurant(list1, list2):
         result = [list2[i]]
             
   return result
+        
+  
+#Add tests
+def find_restaurant_test():
+
+  input_list1a = ["Shogun","Tapioca Express","Burger King","KFC"]
+  input_list2a = ["Shogun","Tapioca Express","Burger King","KFC"]
+  input_list3a = ["Shogun","Tapioca Express","Burger King","KFC"]
+
+  input_list1b = ["Piatti","The Grill at Torrey Pines","Hungry Hunter Steakhouse","Shogun"]
+  input_list2b = ["Shogun"]
+  input_list3b = ["KFC","Shogun","Burger King"]
+  
+
+  expected_output1 = ["Shogun"]
+  expected_output2 = ["Shogun"]
+  expected_output3 = ["Shogun"]
+
+  return ( expected_output1 == find_restaurant(input_list1a, input_list1b), expected_output2 == find_restaurant(input_list2a, input_list2b), expected_output3 == find_restaurant(input_list3a, input_list3b) )
+
+print(find_restaurant_test())
