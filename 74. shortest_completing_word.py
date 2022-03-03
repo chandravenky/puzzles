@@ -52,3 +52,23 @@ def shortest_completing_word(licensePlate, words):
         pass
                 
     return output
+
+#Add tests
+def shortest_completing_word_test():
+
+  input_licensePlate1 = "1s3 PSt"
+  input_licensePlate2 = "1s3 456"
+  input_licensePlate3 = "GrC8950"
+
+  input_words1 = ["step","steps","stripe","stepple"]
+  input_words2 = ["looks","pest","stew","show"]
+  input_words3 = ["measure","other","every","base","according","level","meeting","none","marriage","rest"]
+  
+
+  expected_output1 = "steps"
+  expected_output2 = "pest"
+  expected_output3 = "according"
+
+  return ( expected_output1 == shortest_completing_word(input_licensePlate1, input_words1), expected_output2 == shortest_completing_word(input_licensePlate2, input_words2), expected_output3 == shortest_completing_word(input_licensePlate3, input_words3) )
+
+print(shortest_completing_word_test())
