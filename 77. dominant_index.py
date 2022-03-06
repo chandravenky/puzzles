@@ -22,3 +22,17 @@ def dominant_index(nums):
         return -1
           
   return largest_index
+
+def dominant_index_test():
+
+  input_nums1 = [3,6,1,0]
+  input_nums2 = [1,2,3,4]
+  input_nums3 = [1]
+
+  expected_output1 = 1
+  expected_output2 = -1
+  expected_output3 = 0
+
+  return ( expected_output1 == dominant_index(input_nums1), expected_output2 == dominant_index(input_nums2), expected_output3 == dominant_index(input_nums3)  )
+
+print(dominant_index_test())
