@@ -47,3 +47,35 @@ def most_common_word_test():
   return ( expected_output1 == most_common_word(input_paragraph1, input_banned1), expected_output2 == most_common_word(input_paragraph2, input_banned2), expected_output3 == most_common_word(input_paragraph3, input_banned3), expected_output4 == most_common_word(input_paragraph4, input_banned4) )
 
 print(most_common_word_test())
+
+class Solution(object):
+    def mostCommonWord(self, paragraph, banned):
+        """
+        :type paragraph: str
+        :type banned: List[str]
+        :rtype: str
+        """
+        
+        store = {}
+        paragraph = paragraph.lower()
+        paragraph = re.sub(r'[^\w\s]',' ',paragraph)
+
+        paragraph_list = paragraph.split()
+        
+        banned = banned if len(banned) else ['']
+
+        for word in paragraph_list:
+
+            if word in banned:
+                pass
+
+            elif word in store:
+                store[word] = store[word] + 1
+
+            else:
+                store[word] = 1
+
+        most_frequent_value = max(store.values())
+        most_frequent_item = [key for key, value in store.items() if value == most_frequent_value]
+
+        return most_frequent_item[0]
