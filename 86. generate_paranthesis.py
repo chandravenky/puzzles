@@ -24,3 +24,15 @@ def generate_parenthesis(n):
     backtrack(0,0)
     
     return result
+
+def generate_parenthesis_test():
+
+  input_n1 = 3
+  input_n2 = 1
+
+  expected_output1 = ["((()))","(()())","(())()","()(())","()()()"]
+  expected_output2 = ["()"]
+
+  return ( expected_output1 == generate_parenthesis(input_n1), expected_output2 == generate_parenthesis(input_n2) )
+
+print(generate_parenthesis_test())
