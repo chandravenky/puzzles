@@ -20,3 +20,17 @@ def permute(nums):
     backtrack(0)
   
     return res
+
+def permute_test():
+
+  input_nums1 = [1,2,3]
+  input_nums2 = [0,1]
+  input_nums3 = [1]
+
+  expected_output1 = [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+  expected_output2 = [[0,1],[1,0]]
+  expected_output3 = [[1]]
+
+  return ( expected_output1 == permute(input_nums1), expected_output2 == permute(input_nums2), expected_output3 == permute(input_nums3) )
+
+print(permute_test())
