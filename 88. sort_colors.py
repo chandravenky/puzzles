@@ -23,3 +23,15 @@ def sort_colors(nums):
       store[2] = store[2] - 1
         
   return nums
+
+def sort_colors_test():
+
+  input_nums1 = [2,0,2,1,1,0]
+  input_nums2 = [2,0,1]
+
+  expected_output1 = [0,0,1,1,2,2]
+  expected_output2 = [0,1,2]
+
+  return ( expected_output1 == sort_colors(input_nums1), expected_output2 == sort_colors(input_nums2) )
+
+print(sort_colors_test())
