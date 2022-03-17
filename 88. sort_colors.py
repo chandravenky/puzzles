@@ -35,3 +35,33 @@ def sort_colors_test():
   return ( expected_output1 == sort_colors(input_nums1), expected_output2 == sort_colors(input_nums2) )
 
 print(sort_colors_test())
+
+#Submission
+class Solution(object):
+    def sortColors(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: None Do not return anything, modify nums in-place instead.
+        """
+        
+        store = {0: 0, 1: 0, 2: 0}
+        
+        for i in range(0, len(nums)):
+            
+            store[nums[i]] = store[nums[i]] + 1
+            
+        for i in range(0, len(nums)):
+            
+            if store[0] >0:
+                nums[i] = 0
+                store[0] = store[0] - 1
+            
+            elif store[1] > 0:
+                nums[i] = 1
+                store[1] = store[1] - 1
+                
+            else:
+                nums[i] = 2
+                store[2] = store[2] - 1
+                
+        return nums
