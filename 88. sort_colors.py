@@ -1,4 +1,3 @@
-#Problem 75
 
 def sort_colors(nums):
     
