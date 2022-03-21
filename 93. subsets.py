@@ -22,3 +22,15 @@ def subsets(nums):
       backtrack()
       
   return output
+
+def subsets_test():
+
+  input_nums1 = [1,2,3]
+  input_nums2 = [0]
+
+  expected_output1 = [[],[1],[2],[3],[1,2],[1,3],[2,3],[1,2,3]]
+  expected_output2 = [[],[0]]
+
+  return ( expected_output1 == subsets(input_nums1), expected_output2 == subsets(input_nums2) )
+
+print(subsets_test())
