@@ -38,3 +38,32 @@ def combination_sum_test():
   expected_output3 = []
 
   return ( expected_output1 == combination_sum(input_candidates1, input_target1), expected_output2 == combination_sum(input_candidates2, input_target2), expected_output3 == combination_sum(input_candidates3, input_target3) )
+
+class Solution(object):
+    def combinationSum(self, candidates, target):
+        """
+        :type candidates: List[int]
+        :type target: int
+        :rtype: List[List[int]]
+        """
+        def backtrack(first, curr=[]):
+            if sum(curr) == target:
+                if curr not in output:
+                    output.append(copy.deepcopy(curr))
+                return
+        
+            if sum(curr) >target:
+                return
+        
+            for i in range(first, n):
+                curr.append(candidates[first])
+                #print(curr)
+                backtrack(i,curr)
+                curr.pop()
+
+        output = []
+        n = len(candidates)
+        for i in range(0, n):
+            backtrack(i,[])
+
+        return output
